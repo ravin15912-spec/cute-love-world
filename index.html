@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Love World 🌸</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;
+  font-family:'Trebuchet MS',sans-serif;
+  text-align:center;color:white;
+  background:linear-gradient(135deg,#251044,#9b4c91,#ffb7ce);
+  overflow-x:hidden;
+}
+header{padding:35px 12px 10px}
+h1{font-size:clamp(30px,8vw,48px);margin-bottom:8px}
+p{line-height:1.7}
+.gallery{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;padding:20px;max-width:850px;margin:auto;
+}
+.card{
+ background:#ffffff20;border:1px solid #ffffff55;
+ border-radius:22px;padding:14px;
+ box-shadow:0 8px 25px #220b3944;
+}
+.card img{width:100%;height:220px;object-fit:cover;border-radius:15px}
+.card h2{margin-bottom:5px}
+button{
+ border:0;border-radius:30px;padding:14px 23px;
+ background:#ffb7d5;color:#54214e;font-size:16px;
+ font-weight:bold;cursor:pointer;margin:10px;
+}
+#message{font-size:20px;padding:10px;min-height:65px}
+footer{padding:20px}
+.flower{position:fixed;top:-30px;animation:fall 7s linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<header>
+<h1>🌸 Cute Love World 🌸</h1>
+<p>A little world full of flowers, cute cats and anime magic ✨</p>
+</header>
+
+<div class="gallery">
+ <div class="card">
+  <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600" alt="Beautiful flowers">
+  <h2>🌷 Flower Garden</h2>
+  <p>Every flower carries a little happiness.</p>
+ </div>
+ <div class="card">
+  <img src="https://cataas.com/cat?width=600" alt="Cute cat">
+  <h2>🐱 Cute Cat</h2>
+  <p>Small paws, big happiness!</p>
+ </div>
+ <div class="card">
+  <img src="https://placehold.co/600x600/39245c/ffd6ec?text=Anime+Dreams" alt="Anime inspired dreamy art">
+  <h2>💙 Anime Dreams</h2>
+  <p>A dreamy place for an anime-loving heart.</p>
+ </div>
+</div>
+
+<button onclick="showLove()">💌 Open a Little Surprise</button>
+<div id="message"></div>
+
+<footer>Made with 💖 by Ravx</footer>
+
+<script>
+function showLove(){
+ document.getElementById("message").innerHTML =
+ "🌸 Stay cute, keep smiling, and let your dreams bloom! 🐱💗";
+}
+const emojis=["🌸","🌷","💗","✨"];
+for(let i=0;i<18;i++){
+ let f=document.createElement("div");
+ f.className="flower";
+ f.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ f.style.left=Math.random()*100+"vw";
+ f.style.animationDelay=Math.random()*7+"s";
+ f.style.fontSize=(16+Math.random()*18)+"px";
+ document.body.appendChild(f);
+}
+</script>
+</body>
+</html>
